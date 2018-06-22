@@ -1,2 +1,2 @@
-# Hacker-Earth-Problems
-my solutions to some of hacker earth practice problems in c++
+# Practice Problems
+my solutions to some of online problem solving websites(hackerearth, hackerrank,codeforces,...etc) practice problems in c/c++ and python
