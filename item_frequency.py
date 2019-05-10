@@ -6,3 +6,5 @@ for item in array:
     elif item in dict.keys():
         dict[item]=dict[item]+1 # hash function
 print(dict)
+print(dict.keys())
+print(dict.values())
