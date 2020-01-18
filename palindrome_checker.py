@@ -1,5 +1,5 @@
 # problem : https://www.geeksforgeeks.org/c-program-check-given-string-palindrome/
-# solution using dequeu data structure
+# solution using recursion with dequeu data structure
 from collections import deque
 
 
