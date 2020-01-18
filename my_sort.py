@@ -31,4 +31,4 @@ def sort(array, ascend=True):
 
 
 print(sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
-print(sort([54, 26, 93, 17, 77, 31, 44, 55, 20],ascend=False))
+print(sort([54, 26, 93, 17, 77, 31, 44, 55, 20], ascend=False))
