@@ -26,4 +26,5 @@ for t in range(T):
     for i in range(n):
         if binarySearch(array_big, 0, m-1, array_small[i]) == -1:
             subset = 'No'
+            break
     print(subset)
