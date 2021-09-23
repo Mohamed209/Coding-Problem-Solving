@@ -1,3 +1,3 @@
 problem : https://www.hackerrank.com/challenges/earnings-of-employees/problem
-query : select salary*months as "maximum total earnings" ,count(salary*months) from Employee group by salary*months order by salary*months desc limit 1;
+query : select salary*months as "maximum total earnings" ,count(1) from Employee group by 1 order by 1 desc limit 1;
 ===============================================================================
