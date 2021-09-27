@@ -10,3 +10,5 @@ query : select round(sqrt((max(LAT_N)-min(LAT_N))*(max(LAT_N)-min(LAT_N))+(max(L
 problem : https://www.hackerrank.com/challenges/asian-population/problem
 query : select sum(city.population) from city inner join country ON COUNTRY.CODE = CITY.COUNTRYCODE where country.CONTINENT='Asia'
 ===============================================================================
+problem : https://www.hackerrank.com/challenges/average-population-of-each-continent/problem
+query : select country.continent,floor(avg(city.population)) from city inner join country ON country.code = city.countrycode group by country.continent
