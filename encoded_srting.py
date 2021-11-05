@@ -10,14 +10,10 @@ class Solution:
                 temps = ''
                 while stack and stack[-1] != '[':
                     temps = stack.pop()+temps
-                    # if not stack:
-                    #     break
                 stack.pop()
                 multi = ''
                 while stack and stack[-1].isdigit():
                     multi = stack.pop()+multi
-                    # if not stack:
-                    #     break
                 multi = int(multi)
                 temps = temps*multi
                 stack.append(temps)
