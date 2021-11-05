@@ -16,4 +16,4 @@ def dailyTemperatures(temperatures: List[int]) -> List[int]:
     return result
 
 
-dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])
+print(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
