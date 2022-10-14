@@ -6,6 +6,8 @@ def find_the_single(nums):
     # edge case single element in nums
     if len(nums) == 1:
         return nums[0]
+    if len(nums) == 2:
+        return nums  # both elements are single
     left_pointer = 0
     right_pointer = 1
     while left_pointer < len(nums)-1 and right_pointer < len(nums):
