@@ -23,3 +23,24 @@ class Solution:
 
 s = Solution()
 print(s.uniquePaths(3, 7))
+
+# tabulation
+
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        table = []
+        for _ in range(m+1):
+            table.append([0]*(n+1))
+        table[1][1] = 1
+        for i in range(m+1):
+            for j in range(n+1):
+                if j+1 <= n:
+                    table[i][j+1] += table[i][j]
+                if i+1 <= m:
+                    table[i+1][j] += table[i][j]
+        return table[m][n]
+
+
+s = Solution()
+print(s.uniquePaths(3, 7))
