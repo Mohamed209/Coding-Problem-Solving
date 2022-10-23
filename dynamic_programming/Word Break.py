@@ -1,6 +1,8 @@
 # https://leetcode.com/problems/word-break/
 from typing import List
 
+# check images/canConstruct.png , images/canSonstructMemo.png for tree sketch
+
 
 class Solution:
     cache = {}
