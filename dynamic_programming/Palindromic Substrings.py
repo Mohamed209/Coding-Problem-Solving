@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/palindromic-substrings/
+# revisit
 class Solution:
     def countSubstrings(self, s: str) -> int:
         res = 0

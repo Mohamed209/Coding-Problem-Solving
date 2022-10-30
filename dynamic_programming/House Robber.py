@@ -22,7 +22,7 @@ class Solution:
         """
         max_loot += max(nums[0]+Solution.dfs(nums[2:], max_loot),
                         nums[1]+Solution.dfs(nums[3:]), max_loot)
-        Solution.cache[tuple(nums)] = max_loot
+        Solution.cache[nums] = max_loot
         return max_loot
 
     def rob(self, nums: List[int]) -> int:
