@@ -21,7 +21,9 @@ class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
         cache = {}
         """
-        bottom-right cell is our target (one of the base cases) , and we can reach it from multiple paths
+        - min path sum (grid) is grid[0][0] + which is minimum to move down so grid will shrink and starting point will be m-1,n
+        or move right so also grid will shrink and starting point m,n-1 , then we recurse again
+        - bottom-right cell is our target (one of the base cases) , and we can reach it from multiple paths
         starting from up-left cell , using two options down or left
         """
         return Solution.dfs(len(grid)-1, len(grid[0])-1, grid, cache)
