@@ -29,7 +29,7 @@ class Solution:
 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         self.dfs(candidates, target)
-        return self.res, self.cache
+        return self.res
 
 
 s = Solution()
