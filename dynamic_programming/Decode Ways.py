@@ -1,20 +1,32 @@
 # https://leetcode.com/problems/decode-ways/
-# revisit
 class Solution:
-    @staticmethod
-    def dfs(s: str, index: int, cache: dict):
-        if cache[index]:
-            return cache[index]
-        if index == len(s):
-            return 1
-        elif s[index] == "0":
-            return 0
-        result = Solution.dfs(s, index+1, cache)
-        if index + 1 < len(s) and int(s[index:index+2]) <= 26:
-            result += Solution.dfs(s, index+2, cache)
-        cache[index] = result
-        return result
+    def __init__(self) -> None:
+        self.cache = {}
 
     def numDecodings(self, s: str) -> int:
-        cache = {i: None for i in range(len(s)+1)}
-        return Solution.dfs(s, 0, cache)
+        if s in self.cache:
+            return self.cache[s]
+        if len(s) == 1 and s[0] != "0" or s in ["10", "20"]:
+            # base case , I found a way to decode the string
+            return 1
+        elif len(s) == 2 and s[0] != "0" and int(s) <= 26:
+            # base case , I found a way to decode the string
+            return 2
+        elif len(s) == 0 or s[0] == "0":
+            # base case , dead end
+            return 0
+        """
+        two options:
+        1- take first char , then recurse again for remaining substring
+        2- take first two , then also recurse again for remaining substring
+        """
+        if len(s) >= 2 and int(s[:2]) > 26:
+            ways = self.numDecodings(s[1:])
+        else:
+            ways = self.numDecodings(s[1:])+self.numDecodings(s[2:])
+        self.cache[s] = ways
+        return ways
+
+
+s = Solution()
+print(s.numDecodings("12120"))
