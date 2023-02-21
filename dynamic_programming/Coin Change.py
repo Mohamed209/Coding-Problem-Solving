@@ -29,4 +29,3 @@ class Solution:
 
 s = Solution()
 print(s.coinChange([1, 2, 5], 11))
-print(s.cache)
