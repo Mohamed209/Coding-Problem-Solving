@@ -3,27 +3,55 @@ from typing import List
 
 
 class Solution:
-    @staticmethod
-    def dfs(row, col, grid):
-        if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] in ['0', '2']:
-            # water or visited or out of bounds
-            return
-        grid[row][col] = '2'  # mark as visited
-        # search in all four directions horizontal and vertical
-        Solution.dfs(row-1, col, grid)
-        Solution.dfs(row+1, col, grid)
-        Solution.dfs(row, col-1, grid)
-        Solution.dfs(row, col+1, grid)
+    def __init__(self) -> None:
+        self.visited = set()
+
+    def dfs(self, r, c, grid):
+        # base cases to stop rcursive dfs
+        if (
+            r < 0
+            or r >= len(grid)
+            or c < 0
+            or c >= len(grid[0])
+            or grid[r][c] == "0"
+            or (r, c) in self.visited
+        ):
+            return 0
+        self.visited.add((r, c))
+        # start 4 directions dfs
+        self.dfs(r, c - 1, grid)
+        self.dfs(r, c + 1, grid)
+        self.dfs(r - 1, c, grid)
+        self.dfs(r + 1, c, grid)
+        return 1
 
     def numIslands(self, grid: List[List[str]]) -> int:
-        rows = len(grid)
-        cols = len(grid[0])
-        no_of_lands = 0
-        # visit every cell , complexity O(rows*cols)
-        for r in range(rows):
-            for c in range(cols):
-                # call the dfs starting from current cell
-                if grid[r][c] == '1':
-                    Solution.dfs(r, c, grid)
-                    no_of_lands += 1
-        return no_of_lands
+        res = 0
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                res += self.dfs(r, c, grid)
+        return res
+
+
+s = Solution()
+print(
+    s.numIslands(
+        grid=[
+            ["1", "1", "1", "1", "0"],
+            ["1", "1", "0", "1", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "0", "0", "0"],
+        ]
+    )
+)
+s = Solution()
+print(
+    s.numIslands(
+        grid=[
+            ["1", "1", "0", "0", "0"],
+            ["1", "1", "0", "0", "0"],
+            ["0", "0", "1", "0", "0"],
+            ["0", "0", "0", "1", "1"],
+        ]
+    )
+)
