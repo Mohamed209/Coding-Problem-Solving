@@ -5,7 +5,6 @@ from typing import List
 class Solution:
     def __init__(self) -> None:
         self.visited = set()
-        self.cur_island_area = 0
 
     def dfs(self, r, c, grid):
         # base cases to stop rcursive dfs
