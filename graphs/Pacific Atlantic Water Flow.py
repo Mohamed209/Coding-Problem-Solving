@@ -1,32 +1,58 @@
 # https://leetcode.com/problems/pacific-atlantic-water-flow/
-# helper implementation : https://github.com/neetcode-gh/leetcode/blob/main/417-Pacific-Atlantic-Waterflow.py
 from typing import List
 
 
 class Solution:
-    @staticmethod
-    def dfs(r, c, heights, prev_cell, visited):
-        if r < 0 or c < 0 or r == len(heights) or c == len(heights[0]) or heights[r][c] < prev_cell or (r, c) in visited:
+    def dfs(
+        self, visited: set, r: int, c: int, heights: List[List[int]], start_point: int
+    ):
+        if (
+            c < 0
+            or c >= len(heights[0])
+            or r < 0
+            or r >= len(heights)
+            or ((r, c)) in visited
+            or start_point > heights[r][c]
+        ):
             return
         visited.add((r, c))
-        Solution.dfs(r + 1, c, heights, heights[r][c], visited)
-        Solution.dfs(r - 1, c, heights, heights[r][c], visited)
-        Solution.dfs(r, c + 1, heights, heights[r][c], visited)
-        Solution.dfs(r, c - 1, heights, heights[r][c], visited)
+        start_point = heights[r][c]
+        self.dfs(visited, r, c + 1, heights, start_point)
+        self.dfs(visited, r, c - 1, heights, start_point)
+        self.dfs(visited, r + 1, c, heights, start_point)
+        self.dfs(visited, r - 1, c, heights, start_point)
 
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        rows = len(heights)
-        cols = len(heights[0])
-        pacific, atlantic = set(), set()
-        for c in range(cols):
-            Solution.dfs(0, c, heights, heights[0][c], pacific)
-            Solution.dfs(rows - 1, c, heights, heights[rows - 1][c], atlantic)
-        for r in range(rows):
-            Solution.dfs(r, 0, heights, heights[r][0], pacific)
-            Solution.dfs(r, cols - 1, heights, heights[r][cols - 1], atlantic)
-        return list(atlantic.intersection(pacific))
+        pvisited = set()
+        avisited = set()
+        ROWS = len(heights)
+        COLS = len(heights[0])
+        for r in range(ROWS):
+            self.dfs(
+                pvisited, r, 0, heights, 0
+            )  # starting from pacific left , what are cells that can flow the water to atlantic right ?
+            self.dfs(
+                avisited, r, COLS - 1, heights, 0
+            )  # starting from atlantic right, what are cells that can flow the water to pacific left ?
+        for c in range(COLS):
+            self.dfs(
+                pvisited, 0, c, heights, 0
+            )  # starting from pacific up , what are cells that can flow the water to atlantic down ?
+            self.dfs(
+                avisited, ROWS - 1, c, heights, 0
+            )  # starting from atlantic down, what are cells that can flow the water to pacific up ?
+        return list(avisited.intersection(pvisited))
 
 
 s = Solution()
-print(s.pacificAtlantic([[1, 2, 2, 3, 5], [3, 2, 3, 4, 4], [
-    2, 4, 5, 3, 1], [6, 7, 1, 4, 5], [5, 1, 1, 2, 4]]))
+print(
+    s.pacificAtlantic(
+        [
+            [1, 2, 2, 3, 5],
+            [3, 2, 3, 4, 4],
+            [2, 4, 5, 3, 1],
+            [6, 7, 1, 4, 5],
+            [5, 1, 1, 2, 4],
+        ]
+    )
+)
