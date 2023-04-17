@@ -1,4 +1,4 @@
-# need correction
+# https://www.interviewbit.com/problems/meeting-rooms/
 class Solution:
     # @param A : list of list of integers
     # @return an integer
@@ -7,7 +7,7 @@ class Solution:
         for interval in A:
             aux.append((interval[0], "s"))
             aux.append((interval[1], "e"))
-        aux = sorted(aux, key=lambda x: x[0])
+        aux.sort()
         utilized_rooms = 0
         maxnedded = 0
         for au in aux:
