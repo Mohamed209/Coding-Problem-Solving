@@ -2,25 +2,20 @@
 # check ../images/howSum.png
 from typing import List
 
-# TODO : implement memoaization
-
 
 class Solution:
     def __init__(self) -> None:
         self.res = []
         self.currpath = []
-        self.cache = {}
 
     def dfs(self, candidates: List[int], target: int):
-        if target in self.cache:
-            return self.cache[target]
         if target < 0:
             return None
         if target == 0:
             return []
         for item in candidates:
             self.currpath.append(item)
-            path = self.dfs(candidates, target-item)
+            path = self.dfs(candidates, target - item)
             if path != None:  # valid path
                 currpath_sorted = sorted(self.currpath.copy())
                 if currpath_sorted not in self.res:  # unique combinations
