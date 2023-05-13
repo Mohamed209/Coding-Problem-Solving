@@ -1,4 +1,7 @@
 # https://www.interviewbit.com/problems/meeting-rooms/
+from typing import List
+
+
 class Solution:
     # @param A : list of list of integers
     # @return an integer
@@ -22,6 +25,8 @@ class Solution:
 
 s = Solution()
 As = [
+    [[7, 10], [4, 19], [19, 26], [14, 16], [13, 18], [16, 21]],
+    [[1, 18], [18, 23], [15, 29], [4, 15], [2, 11], [5, 13]],
     [[1, 18], [18, 23], [15, 29], [4, 15], [2, 11], [5, 13]],
     [[0, 30], [5, 10], [15, 20]],
     [[0, 30], [5, 10], [10, 15]],
