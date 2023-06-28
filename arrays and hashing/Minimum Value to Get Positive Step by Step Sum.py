@@ -8,7 +8,7 @@ class Solution:
         let running_sum is a variable of type List[int] is the running sum of nums
         let x = min(running_sum)
         if x>0 simply return 1 as we are sure there is no loose (negative) during the traversal
-        but if x<0 , then simply to be in the safe side and not to dip below 0 we should start with a value
+        but if x<=0 , then simply to be in the safe side and not to dip below 0 we should start with a value
         y where y=abs(x)+1
         """
         running_sum = [nums[0]]
