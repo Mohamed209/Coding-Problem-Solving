@@ -13,7 +13,6 @@ class Solution:
         for i in range(len(lens) - 1):
             max_ones = max(max_ones, lens[i] + lens[i + 1])
         return max_ones
-        return max_ones
 
 
 s = Solution()
