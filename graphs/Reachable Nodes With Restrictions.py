@@ -27,7 +27,7 @@ class Solution:
         restricted_hash_set = set(restricted)  # hashset for O(1) queries
         return dfs(
             0, path, graph, restricted_hash_set
-        )  # start dfs from node 0 and keep update dfs path for with every valid node
+        )  # start dfs from node 0 and keep update dfs path with every valid node
 
 
 s = Solution()
