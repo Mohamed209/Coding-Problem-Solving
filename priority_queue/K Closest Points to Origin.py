@@ -1,11 +1,15 @@
 # https://leetcode.com/problems/k-closest-points-to-origin/
+import heapq
 import math
 from typing import List
 
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
-        return sorted(points, key=lambda x: math.sqrt(x[0] ** 2 + x[1] ** 2))[:k]
+        heapq.heapify(points)
+        return heapq.nsmallest(
+            iterable=points, key=lambda x: math.sqrt(x[0] ** 2 + x[1] ** 2), n=k
+        )
 
 
 s = Solution()
