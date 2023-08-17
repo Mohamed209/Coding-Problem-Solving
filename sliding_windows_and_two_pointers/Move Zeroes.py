@@ -9,7 +9,7 @@ class Solution:
         """
         left_ptr = 0
         right_ptr = 1
-        while(right_ptr < len(nums)):
+        while right_ptr < len(nums):
             if nums[left_ptr] == 0 and nums[right_ptr] != 0:
                 # swap the two elements
                 tmp = nums[right_ptr]
