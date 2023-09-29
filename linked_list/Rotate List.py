@@ -19,14 +19,14 @@ class Solution:
         while tail.next:
             length += 1
             tail = tail.next
-        #============================#
+        # ============================#
         k = k % length
         if k == 0:
             return head
         # travel to length-k-1
         i = 0
         cur = head
-        while(i < length-k-1):
+        while i < length - k - 1:
             i += 1
             cur = cur.next
         newhead = cur.next
