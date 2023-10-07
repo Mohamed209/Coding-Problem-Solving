@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/description/
 class Solution:
     def findKthBit(self, n: int, k: int) -> str:
         def rev_invert(x: str) -> str:
