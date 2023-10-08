@@ -4,16 +4,6 @@ from typing import List
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        # res = []
-        # for i in range(len(nums)):
-        #     if nums[i] == target:
-        #         res.append(i)
-        #     elif nums[i] > target:
-        #         break
-        # if len(res) == 0:
-        #     return [-1, -1]
-        # return [res[0], res[-1]]
-        
         def binarySearch(a, x):
             i = bisect_left(a, x)
             if i != len(a) and a[i] == x:

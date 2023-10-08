@@ -1,42 +1,37 @@
-from bisect import bisect_left
 from typing import List
 
 
 class Solution:
-    # def rotBinarySearch(self, left, right, nums, target):
-    #     if right >= left:
-    #         mid = (right - left) // 2 + left
-    #         if target == nums[mid]:
-    #             return mid
-    #         # if it was ordinary array we would go search in right area next to mid
-    #         # we need to modify the algorithm to handle possible rotations
-    #         elif target > nums[mid]:
-    #             if (
-    #                 nums[right] < nums[mid]
-    #             ):  # rotation detected , search in opposite section
-    #                 return self.rotBinarySearch(left, mid - 1, nums, target)
-    #             else:
-    #                 return self.rotBinarySearch(mid + 1, right, nums, target)
-    #         else:
-    #             if nums[right] < nums[mid]:
-    #                 # rotation detected , search in opposite section
-    #                 return self.rotBinarySearch(mid + 1, right, nums, target)
-    #             else:
-    #                 return self.rotBinarySearch(left, mid - 1, nums, target)
-    #     else:
-    #         return -1
-
     def search(self, nums: List[int], target: int) -> int:
-        def binarySearch(a, x):
-            i = bisect_left(a, x)
-            if i != len(a) and a[i] == x and a[i + 1] < x:
-                return i
+        low = 0
+        high = len(nums) - 1
+        mid = 0
+        while low <= high:
+            mid = (high + low) // 2
+            if nums[high] >= nums[mid]:
+                # we are lucky since there is no rotation detected
+                # if x is greater, ignore left half
+                if nums[mid] < target or target < nums[low]:
+                    low = mid + 1
+                # if x is smaller, ignore right half
+                elif nums[mid] > target:
+                    high = mid - 1
+                # means x is present at mid
+                else:
+                    return mid
             else:
-                return -1
-
-        # return self.rotBinarySearch(
-        #     left=0, right=len(nums) - 1, nums=nums, target=target
-        # )
+                # rotation detected , so we reverse the standard binary search algorithm
+                # if x is greater, ignore right half
+                if nums[mid] < target:
+                    high = mid - 1
+                # if x is smaller, ignore left half
+                elif nums[mid] > target:
+                    low = mid + 1
+                # means x is present at mid
+                else:
+                    return mid
+        # if we reach here, then the element was not present
+        return -1
 
 
 s = Solution()
