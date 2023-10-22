@@ -15,11 +15,11 @@ class Solution:
         if not root:
             return False
         targetSum -= root.val
-        if ((targetSum == 0) and (not root.left) and (not root.right)):
+        if (targetSum == 0) and (not root.left) and (not root.right):
             return True
         if self.hasPathSum(root.left, targetSum):
             return True
         elif self.hasPathSum(root.right, targetSum):
             return True
         else:
-            return False
+            return False                    
