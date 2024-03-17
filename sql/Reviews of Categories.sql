@@ -1,3 +1,4 @@
+# https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=1
 WITH cat AS
   (SELECT unnest(string_to_array(categories, ';')) AS category,
           review_count
