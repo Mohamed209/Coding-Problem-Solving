@@ -22,5 +22,5 @@ class Solution:
         # scan nums O(n) divide total_product by every num
         P = []
         for num in nums:
-            P.append(total_product//num)
+            P.append(total_product // num)
         return P

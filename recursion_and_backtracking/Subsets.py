@@ -17,9 +17,9 @@ class Solution:
             return
         for i in range(len(nums)):
             self.current_path.append(nums[i])
-            self.dfs(nums[i+1:])  # take current element
+            self.dfs(nums[i + 1 :])  # take current element
             self.current_path.pop()  # not to take current element
-            self.dfs(nums[i+1:])
+            self.dfs(nums[i + 1 :])
 
     def subsets(self, nums: List[int]) -> List[List[int]]:
         self.dfs(nums)

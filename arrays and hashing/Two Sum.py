@@ -8,5 +8,5 @@ class Solution:
         for i in range(len(nums)):
             numsdict[nums[i]] = i
         for i in range(len(nums)):
-            if target-nums[i] in numsdict and numsdict[target-nums[i]] > i:
-                return [i, numsdict[target-nums[i]]]
+            if target - nums[i] in numsdict and numsdict[target - nums[i]] > i:
+                return [i, numsdict[target - nums[i]]]

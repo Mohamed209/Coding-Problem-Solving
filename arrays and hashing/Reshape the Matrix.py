@@ -6,12 +6,12 @@ class Solution:
     def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
         n = len(mat)  # original rows
         m = len(mat[0])  # original cols
-        if r*c != m*n:  # r*c must equal m*n do perform the reshaping
+        if r * c != m * n:  # r*c must equal m*n do perform the reshaping
             return mat
         else:
             k = 0
             v = 0
-            ans=[]
+            ans = []
             for i in range(r):
                 ans.append([])
                 for j in range(c):

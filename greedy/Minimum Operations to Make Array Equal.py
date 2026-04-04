@@ -9,7 +9,7 @@ class Solution:
         for i in range(n):
             if nums[i] >= avg:
                 break
-            steps += avg-nums[i]
+            steps += avg - nums[i]
         return steps
 
 

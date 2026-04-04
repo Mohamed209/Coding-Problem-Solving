@@ -10,7 +10,7 @@ def find_the_single(nums):
         return nums  # both elements are single
     left_pointer = 0
     right_pointer = 1
-    while left_pointer < len(nums)-1 and right_pointer < len(nums):
+    while left_pointer < len(nums) - 1 and right_pointer < len(nums):
         if nums[left_pointer] != nums[right_pointer]:
             return nums[left_pointer]
         left_pointer += 2

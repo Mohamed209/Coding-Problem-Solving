@@ -22,4 +22,4 @@ class Solution:
         elif self.hasPathSum(root.right, targetSum):
             return True
         else:
-            return False                    
+            return False

@@ -1,5 +1,6 @@
 from collections import deque
 from typing import Optional
+
 # Definition for a binary tree node.
 
 
@@ -17,7 +18,7 @@ class Solution:
         available = set()
         while len(queue) > 0:
             popped = queue.popleft()
-            if k-popped.val in available:
+            if k - popped.val in available:
                 return True
             else:
                 available.add(popped.val)

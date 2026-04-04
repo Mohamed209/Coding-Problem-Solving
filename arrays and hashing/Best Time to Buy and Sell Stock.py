@@ -10,7 +10,7 @@ class Solution:
                 r += 1
             elif prices[r] > prices[l]:
                 # we found a profit window
-                curprofit = prices[r]-prices[l]
+                curprofit = prices[r] - prices[l]
                 if curprofit > profit:
                     profit = curprofit
                 r += 1

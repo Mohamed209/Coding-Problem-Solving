@@ -14,7 +14,7 @@ class Solution:
                 l -= 1
                 r += 1
             # assume current two chars in the middle is the center char
-            l, r = i, i+1
+            l, r = i, i + 1
             # expand window left and right with one char
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 cnt += 1

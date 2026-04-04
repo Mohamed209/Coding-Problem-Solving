@@ -8,7 +8,7 @@ class Solution:
         if path not in res:
             res.append(path)
         for i in range(len(nums)):
-            Solution.dfs(nums[i+1:], res, path+[nums[i]])
+            Solution.dfs(nums[i + 1 :], res, path + [nums[i]])
 
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         res = []

@@ -20,8 +20,11 @@ class Solution:
         1- steal current house (nums[0]) + recurse again on houses starting from my starting point+2
         2- steal next house (nums[1]) + recurse again on houses starting from my starting point+3
         """
-        max_loot += max(nums[0]+Solution.dfs(nums[2:], max_loot),
-                        nums[1]+Solution.dfs(nums[3:]), max_loot)
+        max_loot += max(
+            nums[0] + Solution.dfs(nums[2:], max_loot),
+            nums[1] + Solution.dfs(nums[3:]),
+            max_loot,
+        )
         Solution.cache[nums] = max_loot
         return max_loot
 

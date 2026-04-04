@@ -30,7 +30,7 @@ class Solution:
         last_row2search = 0
         # first reduce search space
         for r in range(rows):
-            idx = rows-r-1
+            idx = rows - r - 1
             if target < matrix[idx][0]:
                 continue
             elif target == matrix[idx][0]:
@@ -39,7 +39,7 @@ class Solution:
                 last_row2search = idx
                 break
         # second find best row to search
-        for r in range(last_row2search+1):
+        for r in range(last_row2search + 1):
             if target > matrix[r][-1]:
                 continue
             elif target == matrix[r][-1]:
@@ -47,7 +47,7 @@ class Solution:
             else:
                 best_row = r
                 break
-        if binary_search(matrix[best_row], 1, len(matrix[best_row])-1, target):
+        if binary_search(matrix[best_row], 1, len(matrix[best_row]) - 1, target):
             return True
         else:
             return False

@@ -24,7 +24,7 @@ class Solution:
             return head
         # second loop until nodes_count-n-1
         curr2 = head
-        for _ in range(nodes_count-n-1):
+        for _ in range(nodes_count - n - 1):
             curr2 = curr2.next
         curr2.next = curr2.next.next
         return head

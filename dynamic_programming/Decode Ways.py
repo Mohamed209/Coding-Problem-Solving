@@ -23,7 +23,7 @@ class Solution:
         if len(s) >= 2 and int(s[:2]) > 26:
             ways = self.numDecodings(s[1:])
         else:
-            ways = self.numDecodings(s[1:])+self.numDecodings(s[2:])
+            ways = self.numDecodings(s[1:]) + self.numDecodings(s[2:])
         self.cache[s] = ways
         return ways
 

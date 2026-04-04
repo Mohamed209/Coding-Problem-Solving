@@ -10,6 +10,6 @@ class Solution:
             return 1
         elif n == 0:
             return 0
-        result = self.fib(n-1)+self.fib(n-2)
+        result = self.fib(n - 1) + self.fib(n - 2)
         self.cache[n] = result
         return result

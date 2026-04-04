@@ -1,6 +1,7 @@
 """
 basics of DFS/BFS traversal
 """
+
 from collections import deque
 
 graph = {"a": ["b", "c"], "b": ["d"], "c": ["e"], "d": ["f"], "e": [], "f": []}

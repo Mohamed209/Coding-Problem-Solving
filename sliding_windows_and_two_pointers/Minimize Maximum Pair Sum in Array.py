@@ -15,4 +15,4 @@ class Solution:
 
 
 s = Solution()
-s.minPairSum([4,1,5,1,2,5,1,5,5,4])
+s.minPairSum([4, 1, 5, 1, 2, 5, 1, 5, 5, 4])

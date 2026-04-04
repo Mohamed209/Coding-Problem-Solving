@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/successful-pairs-of-spells-and-potions
+# https://leetcode.com/problems/successful-pairs-of-spells-and-potions
 from bisect import bisect_left
 from typing import List
 import math

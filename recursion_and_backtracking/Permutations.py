@@ -13,7 +13,7 @@ class Solution:
             return
         for i in range(len(nums)):
             self.current_path.append(nums[i])
-            self.dfs(nums[:i]+nums[i+1:])
+            self.dfs(nums[:i] + nums[i + 1 :])
             self.current_path.pop()
 
     def permute(self, nums: List[int]) -> List[List[int]]:

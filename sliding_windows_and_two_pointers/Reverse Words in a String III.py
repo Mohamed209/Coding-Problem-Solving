@@ -7,8 +7,8 @@ def reverseString(s: List[str]) -> None:
     Do not return anything, modify s in-place instead.
     """
     left_ptr = 0
-    right_ptr = len(s)-1
-    while(left_ptr <= right_ptr):
+    right_ptr = len(s) - 1
+    while left_ptr <= right_ptr:
         # swap
         tmp = s[right_ptr]
         s[right_ptr] = s[left_ptr]
@@ -24,5 +24,5 @@ class Solution:
         for i in range(len(words)):
             word_l = [c for c in words[i]]
             word = reverseString(word_l)
-            words[i] = ''.join([c for c in word])
-        return ' '.join([word for word in words])
+            words[i] = "".join([c for c in word])
+        return " ".join([word for word in words])

@@ -16,7 +16,7 @@ class Solution:
         elif amount < 0:
             # base case , dead end
             return math.inf
-        res = min([1+self.dfs(coins, amount-coin) for coin in coins])
+        res = min([1 + self.dfs(coins, amount - coin) for coin in coins])
         self.cache[amount] = res
         return res
 

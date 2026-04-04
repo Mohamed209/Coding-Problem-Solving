@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/triangle-judgement/description/
+# https://leetcode.com/problems/triangle-judgement/description/
 import pandas as pd
 
 data = [[13, 15, 30], [10, 20, 15]]

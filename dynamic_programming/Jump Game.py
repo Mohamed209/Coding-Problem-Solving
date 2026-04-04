@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/jump-game
+# https://leetcode.com/problems/jump-game
 from functools import cache
 from typing import List
 

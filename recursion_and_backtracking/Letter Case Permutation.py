@@ -14,8 +14,8 @@ class Solution:
             p1 = s[0].swapcase()  # second possibility is to swap the char case
         else:
             p0, p1 = s[0], s[0]
-        Solution.dfs(s[1:], op+p0, res)
-        Solution.dfs(s[1:], op+p1, res)
+        Solution.dfs(s[1:], op + p0, res)
+        Solution.dfs(s[1:], op + p1, res)
 
     def letterCasePermutation(self, s: str) -> List[str]:
         res = []

@@ -12,9 +12,9 @@ class Solution:
             return math.inf
         if m == 0 and n == 0:
             return grid[m][n]
-        min_path_sum = grid[m][n] + \
-            min(Solution.dfs(m-1, n, grid, cache),
-                Solution.dfs(m, n-1, grid, cache))
+        min_path_sum = grid[m][n] + min(
+            Solution.dfs(m - 1, n, grid, cache), Solution.dfs(m, n - 1, grid, cache)
+        )
         cache[(m, n)] = min_path_sum
         return min_path_sum
 
@@ -26,7 +26,7 @@ class Solution:
         - bottom-right cell is our target (one of the base cases) , and we can reach it from multiple paths
         starting from up-left cell , using two options down or left
         """
-        return Solution.dfs(len(grid)-1, len(grid[0])-1, grid, cache)
+        return Solution.dfs(len(grid) - 1, len(grid[0]) - 1, grid, cache)
 
 
 s = Solution()

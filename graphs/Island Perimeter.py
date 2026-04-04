@@ -10,7 +10,12 @@ class Solution:
         if (r, c) in visited:
             return 0
         visited.add((r, c))
-        return Solution.dfs(r, c-1, grid, visited)+Solution.dfs(r-1, c, grid, visited)+Solution.dfs(r, c+1, grid, visited)+Solution.dfs(r+1, c, grid, visited)
+        return (
+            Solution.dfs(r, c - 1, grid, visited)
+            + Solution.dfs(r - 1, c, grid, visited)
+            + Solution.dfs(r, c + 1, grid, visited)
+            + Solution.dfs(r + 1, c, grid, visited)
+        )
 
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         rows, cols = len(grid), len(grid[0])

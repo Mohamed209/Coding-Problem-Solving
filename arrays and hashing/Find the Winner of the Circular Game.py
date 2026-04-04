@@ -4,7 +4,7 @@ from sortedcontainers import SortedList
 
 class Solution(object):
     def findTheWinner(self, n, k):
-        cycle = SortedList(range(1, n + 1)) # to perform O(log(n)) deletion
+        cycle = SortedList(range(1, n + 1))  # to perform O(log(n)) deletion
         index = 0
         while len(cycle) > 1:
             index = (index + k - 1) % len(cycle)

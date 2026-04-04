@@ -8,8 +8,8 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         left_ptr = 0
-        right_ptr = len(s)-1
-        while(left_ptr <= right_ptr):
+        right_ptr = len(s) - 1
+        while left_ptr <= right_ptr:
             # swap
             tmp = s[right_ptr]
             s[right_ptr] = s[left_ptr]

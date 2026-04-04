@@ -1,5 +1,6 @@
 # https://structy.net/problems/undirected-path
 
+
 # convert edges to graph (adj list format)
 def build_graph(edges):
     graph = {}
